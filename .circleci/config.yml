@@ -1,0 +1,25 @@
+---
+jobs:
+  shceduled-job:
+    docker:
+      - image: circleci/python:stretch
+    steps:
+      - checkout
+      - run:
+          name: Execute scheduled job program
+          command: bash scheduled-job-executor.sh
+
+workflows:
+  version: 2
+  build:
+    triggers:
+      - schedule:
+          cron: "0 10 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - shceduled-job:
+          context:
+            - github-actions
