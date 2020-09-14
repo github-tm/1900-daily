@@ -1,2 +1,3 @@
 ansible-test
+ansible-tools
 circleci-executors_molecule
