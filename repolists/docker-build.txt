@@ -1,3 +1,4 @@
 ansible-test
 ansible-tools
 circleci-executors_molecule
+circleci-executors_packer
